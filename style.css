@@ -1,0 +1,152 @@
+/* Global */
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #0d0d0d;
+  color: #d5e5f2;
+  font-family: sans-serif;
+}
+
+.blur {
+  filter: blur(3px);
+  overflow: hidden;
+}
+
+/* Wrapper */
+.content-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+/* Header (Current)*/
+.header {
+  display: flex;
+  align-items: center;
+}
+
+.header-left {
+  display: flex;
+  width: 50%;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 0;
+  border-right: 2px solid #d98e04;
+  gap: 1rem;
+}
+
+.weather-icon {
+  width: 40px;
+  height: 40px;
+}
+
+.large {
+  width: 80px;
+  height: 80px;
+}
+
+.header-current-temp {
+  font-size: 2rem;
+}
+
+.header-right {
+  display: grid;
+  width: 50%;
+  gap: 0.5rem;
+  grid-template-columns: repeat(3, auto);
+}
+
+/* Datos del clima */
+.info-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.2rem;
+}
+
+.label {
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 0.6rem;
+  color: #d98e04;
+}
+
+.value-sub-info {
+  font-weight: lighter;
+  font-size: 0.75rem;
+}
+
+/* Sección Daily */
+.day-section {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 80px);
+  gap: 1rem;
+  justify-content: center;
+  padding: 0 1rem;
+}
+
+.day-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 6px;
+  padding: 0.25rem;
+  border: 2px solid #d98e04;
+}
+
+.day-card-day {
+  text-transform: capitalize;
+  font-size: 0.75rem;
+  color: #d98e04;
+  margin: 0.5rem 0 0.2rem 0;
+  font-weight: bold;
+}
+
+/* Sección Hourly */
+.hour-section {
+  width: 100%;
+  text-align: center;
+  border-spacing: 0;
+  border-top: 2px solid #d98e04;
+}
+
+.hour-row {
+  background-color: #0d0d0d;
+}
+
+.hour-row:nth-child(2n) {
+  background-color: #1a1a1a;
+}
+
+.hour-row>td {
+  padding: 0.5rem;
+}
+
+/* Mobile Responsive */
+@media screen and (max-width: 480px) {
+
+  /* Header (Current) */
+  .header {
+    flex-direction: column;
+    gap: 2rem;
+    width: 100%;
+    margin-top: 0;
+  }
+
+  .header-left {
+    width: 100%;
+    border-right: none;
+    padding-bottom: 0;
+  }
+
+  .header-right {
+    width: 100%;
+  }
+}
